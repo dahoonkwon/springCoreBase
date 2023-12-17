@@ -14,9 +14,26 @@ java {
 repositories {
     mavenCentral()
 }
+//롬복 설정 추가
+configurations {
+    compileOnly{
+        extendsFrom annotationProcessor
+    }
+}
+// 설정 끝
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testCompileOnly 'org.project  lombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
